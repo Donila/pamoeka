@@ -1,0 +1,26 @@
+html {
+  height: 100%;
+}
+body {
+  background: url(../images/background.jpg);
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.main-topic-new {
+  width: 30%;
+  margin: auto;
+}
+.main-topic-new input {
+  opacity: 0.6;
+}
+.topic {
+  height: 30px;
+  margin-bottom: 5px;
+  background-color: white;
+  opacity: 0.5;
+  color: black;
+  border: 1px white solid;
+  border-radius: 6px;
+}

@@ -1,0 +1,37 @@
+<div class="main-container">
+    <div class="main-topic-new">
+        <form class="topic-form" ng-submit="mainCtrl.createTopic(mainCtrl.topic)">
+            <h1 class="topic-title" ng-bind="mainCtrl.title"></h1>
+            <div class="form-group">
+                <input type="text" ng-model="mainCtrl.topic.title" placeholder="Как назвать вашу помоечную тему?" class="form-control" autofocus
+                />
+            </div>
+
+            <div class="form-group">
+                <input type="text" ng-model="mainCtrl.topic.imageUrl" placeholder="Можно добавить ссылку на картинку..." class="form-control"
+                />
+            </div>
+
+            <div class="form-group">
+                <input type="text" ng-model="mainCtrl.topic.createdBy" placeholder="Можно даже представиться, а можно и нет" class="form-control"
+                />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" ng-disabled="!mainCtrl.topic.isValid()" class="form-control">Создать топик</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="topics col-md-8 col-md-offset-2">
+        <a ng-href="{{'/topic/' + topic._id}}" ng-repeat="topic in mainCtrl.topics">
+            <div class="topic container">
+                <div class="col-md-4">{{topic.title}}</div>
+                <div class="col-md-4">{{topic.createdBy || "Анонимус"}}</div>
+                <div class="col-md-4">{{topic.createdAt | fromnow}}</div>
+            </div>
+        </a>
+    </div>
+    
+</div>
