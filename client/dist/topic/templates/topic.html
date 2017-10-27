@@ -1,0 +1,33 @@
+<div class="topic-container col-md-8 col-md-offset-2">
+  <h1><a href="/"><</a> {{topicCtrl.topic.title}}</h1>
+  <h2>Создано: {{topicCtrl.topic.createdBy || "Анонимусом" }} {{topicCtrl.topic.createdAt | fromnow}}</h2>
+    <div class="topics" ng-repeat="item in topicCtrl.items">
+        
+            <div class="topic">
+                <div class="col-md-4">{{item.message}}</div>
+                <div class="col-md-4">{{item.createdBy || "Анонимус"}}</div>
+                <div class="col-md-4">{{item.createdAt | fromnow}}</div>
+            </div>
+    </div>
+
+    <form class="form-inline" ng-submit="topicCtrl.createTodo(topicCtrl.todo)">
+        <div class="form-group col-md-3" style="padding-left: 0;">
+            <input type="text" ng-model="topicCtrl.todo.message" placeholder="Что скажете?" class="form-control" autofocus
+            />
+        </div>
+
+        <div class="form-group col-md-3">
+            <input type="text" ng-model="topicCtrl.todo.createdBy" placeholder="Имя (необязательно)" class="form-control"
+            />
+        </div>
+
+        <div class="form-group col-md-3">
+            <input type="text" ng-model="topicCtrl.todo.imageUrl" placeholder="Ссылка на картинку если надо" class="form-control"
+            />
+        </div>
+
+        <div class="form-group  col-md-3" style="text-align: right;">
+            <button type="submit" ng-disabled="!topicCtrl.todo.isValid()" class="form-control">Написать</button>
+        </div>
+    </form>
+</div>

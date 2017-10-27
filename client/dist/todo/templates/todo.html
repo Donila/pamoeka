@@ -1,0 +1,24 @@
+<div class="topic-container">
+  <form class="topic-form"
+        ng-submit="mainCtrl.createTodo(mainCtrl.topic)">
+
+    <h1 class="topic-title" ng-bind="mainCtrl.title"></h1>
+
+    <input type="text"
+           ng-model="mainCtrl.topic.topicMessage"
+           placeholder="What do you have topic?"
+           autofocus />
+
+    <button type="submit"
+            ng-disabled="!mainCtrl.topic.isValid()">+</button>
+  </form>
+
+  <div class="topic-list">
+    <div ng-repeat="t in mainCtrl.topics track by $index"
+         class="topic-item"
+         ng-click="mainCtrl.deleteTodo(t._id);">
+         
+      <p ng-bind="t.topicMessage"></p>
+    </div>
+  </div>
+</div>
