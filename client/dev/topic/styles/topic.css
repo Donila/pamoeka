@@ -61,3 +61,8 @@
 .todo-container .todo-item:hover {
   background-color: #f1f2f3;
 }
+@media screen and (min-width: 1000px) {
+  .first-topic {
+    padding-left: 0;
+  }
+}
